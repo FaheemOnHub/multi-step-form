@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <title>Multi-Step Form</title>
+  </head>
+  <body class="m-0">
+    <div class="h-screen bg-Alabaster w-full flex items-center justify-center">
+      <div
+        class="p-2 bg-Magnolia border flex flex-col w-3/4 rounded-lg max-w-6xl lg:flex-row"
+        id="middle"
+      >
+        <div
+          class="bg-hero-sidebar bg-cover bg-center flex flex-row justify-center p-8 sm:min-w-60 sm:flex-col hidden"
+          id="screen1"
+        >
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              1
+            </p>
+            <div class="flex flex-col ml-2 hidden sm:block">
+              <p class="text-white text-sm">STEP 1</p>
+              <h3 class="text-white font-bold">YOUR INFO</h3>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              2
+            </p>
+            <div class="flex-col ml-2 hidden sm:block flex">
+              <p class="text-white text-sm">STEP 2</p>
+              <h3 class="text-white font-bold">SELECT PLAN</h3>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              3
+            </p>
+            <div class="flex flex-col ml-2 hidden sm:block">
+              <p class="text-white text-sm">STEP 3</p>
+              <h3 class="text-white font-bold">ADD-ONS</h3>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              4
+            </p>
+            <div class="flex flex-col ml-2 hidden sm:block">
+              <p class="text-white text-sm">STEP 4</p>
+              <h3 class="text-white font-bold">SUMMARY</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-3/4 py-4 px-10 hidden" id="screen1">
+          <h1 class="text-3xl font-bold mb-2">Personal Info</h1>
+          <p class="text-sm mb-4">
+            Please provide your name,email address, and phone number.
+          </p>
+          <div class="flex flex-col">
+            <form>
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="text-sm font-medium text-gray-700 block"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="block mt-1 w-full border-gray-300 rounded-md shadow-sm p-3 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  placeholder="e.g Stephen King "
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="email"
+                  class="text-sm font-medium text-gray-700 block"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="block mt-1 w-full border-gray-300 rounded-md shadow-sm p-3 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  placeholder="e.g stephenking@lorem.com"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="phone"
+                  class="text-sm font-medium text-gray-700 block"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  class="block mt-1 w-full border-gray-300 rounded-md shadow-sm p-3 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  placeholder="e.g +91 7889123456"
+                />
+              </div>
+            </form>
+            <button
+              class="mt-8 self-end p-5 border rounded-lg text-white bg-Purplish-blue"
+            >
+              Next Step
+            </button>
+          </div>
+        </div>
+        <div id="screen2" class="">
+          <div
+            class="bg-hero-sidebar bg-cover bg-center flex flex-row justify-center p-8 sm:min-w-60 lg:flex-col"
+            id="screen1"
+          >
+            <div class="flex mb-4 ml-1">
+              <p
+                class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+              >
+                1
+              </p>
+              <div class="flex flex-col ml-2 hidden lg:block">
+                <p class="text-white text-sm">STEP 1</p>
+                <h3 class="text-white font-bold">YOUR INFO</h3>
+              </div>
+            </div>
+            <div class="flex mb-4 ml-1">
+              <p
+                class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+              >
+                2
+              </p>
+              <div class="flex-col ml-2 hidden lg:block flex">
+                <p class="text-white text-sm">STEP 2</p>
+                <h3 class="text-white font-bold">SELECT PLAN</h3>
+              </div>
+            </div>
+            <div class="flex mb-4 ml-1">
+              <p
+                class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+              >
+                3
+              </p>
+              <div class="flex flex-col ml-2 hidden lg:block">
+                <p class="text-white text-sm">STEP 3</p>
+                <h3 class="text-white font-bold">ADD-ONS</h3>
+              </div>
+            </div>
+            <div class="flex mb-4 ml-1">
+              <p
+                class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+              >
+                4
+              </p>
+              <div class="flex flex-col ml-2 hidden lg:block">
+                <p class="text-white text-sm">STEP 4</p>
+                <h3 class="text-white font-bold">SUMMARY</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="screen2" class="w-3/4 py-4 px-10">
+          <h3 class="text-3xl font-bold mb-2">Select your Plan</h3>
+          <p class="text-sm mb-4">
+            You have the option of monthly or yearly billing
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-6">
+            <div class="plan-option">
+              <input
+                type="radio"
+                name="plan"
+                id="arcade"
+                class="hidden"
+                value="arcade"
+              />
+              <label
+                for="arcade"
+                class="flex flex-col p-4 border rounded-lg cursor-pointer hover:border-Purplish-blue transition-all"
+              >
+                <img
+                  src="../assets/images/icon-arcade.svg"
+                  alt="arcade"
+                  class="w-12 h-12 mb-10"
+                />
+                <h3 class="font-bold mb-1">Arcade</h3>
+                <p class="text-Cool-gray">$9/mo</p>
+              </label>
+            </div>
+            <div class="plan-option">
+              <input
+                type="radio"
+                name="plan"
+                id="advanced"
+                class="hidden"
+                value="advanced"
+              />
+              <label
+                for="advanced"
+                class="flex flex-col p-4 border rounded-lg cursor-pointer hover:border-Purplish-blue transition-all"
+              >
+                <img
+                  src="../assets/images/icon-advanced.svg"
+                  alt="advanced"
+                  class="w-12 h-12 mb-10"
+                />
+                <h3 class="font-bold mb-1">Advanced</h3>
+                <p class="text-Cool-gray">$12/mo</p>
+              </label>
+            </div>
+            <div class="plan-option">
+              <input
+                type="radio"
+                name="plan"
+                id="pro"
+                class="hidden"
+                value="pro"
+              />
+              <label
+                for="pro"
+                class="flex flex-col p-4 border rounded-lg cursor-pointer hover:border-Purplish-blue transition-all"
+              >
+                <img
+                  src="../assets/images/icon-pro.svg"
+                  alt="pro"
+                  class="w-12 h-12 mb-10"
+                />
+                <h3 class="font-bold mb-1">Pro</h3>
+                <p class="text-Cool-gray">$15/mo</p>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

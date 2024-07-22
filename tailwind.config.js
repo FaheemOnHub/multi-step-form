@@ -17,6 +17,7 @@ module.exports = {
       },
       backgroundImage: {
         "hero-sidebar": 'url("../assets/images/bg-sidebar-desktop.svg")',
+        "hero-sidebar-mg": 'url("../assets/images/bg-sidebar-mobile.svg")',
       },
       font: {
         "ubuntu-bold": 'url("../a',

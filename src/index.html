@@ -392,6 +392,97 @@
             </button>
           </div>
         </div>
+        <div
+          class="bg-hero-sidebar-mg lg:bg-hero-sidebar bg-cover bg-center flex flex-row justify-center p-8 sm:min-w-60 lg:flex-col hidden"
+          id="screen1"
+        >
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              1
+            </p>
+            <div class="flex flex-row ml-2 hidden lg:block lg:flex-col">
+              <p class="text-white text-sm">STEP 1</p>
+              <h3 class="text-white font-bold">YOUR INFO</h3>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              2
+            </p>
+            <div class="flex flex-row ml-2 hidden lg:block lg:flex-col">
+              <p class="text-white text-sm">STEP 2</p>
+              <h3 class="text-white font-bold">SELECT PLAN</h3>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              3
+            </p>
+            <div class="flex flex-row ml-2 hidden lg:block lg:flex-col">
+              <p class="text-white text-sm">STEP 3</p>
+              <h3 class="text-white font-bold">ADD-ONS</h3>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              4
+            </p>
+            <div class="flex flex-row ml-2 hidden lg:block lg:flex-col">
+              <p class="text-white text-sm">STEP 4</p>
+              <h3 class="text-white font-bold">SUMMARY</h3>
+            </div>
+          </div>
+        </div>
+        <div id="screen2" class="w-full py-4 px-10 hidden">
+          <h3 class="text-3xl font-bold mb-2">Finishing up</h3>
+          <p class="text-sm mb-4">
+            Double-check everything looks OK before confirming.
+          </p>
+          <div class="flex flex-col justify-between h-96">
+            <div class="flex flex-col mt-4">
+              <div
+                class="p-4 items-center justify-between border rounded-lg cursor-pointer hover:border-Purplish-blue transition-all flex"
+              >
+                <div id="plan-name">
+                  <h3 class="font-bold planNamed">Pro(Yearly)</h3>
+                  <button
+                    class="text-Cool-gray p-1 underline"
+                    id="changeButton"
+                  >
+                    Change
+                  </button>
+                </div>
+                <p class="font-bold" id="planPrice">$150/yr</p>
+              </div>
+              <div class="flex flex-row justify-between p-4">
+                <p class="text-sm text-Cool-gray underline">Total(per year)</p>
+                <p class="font-bold text-Purplish-blue text-xl">$150/yr</p>
+              </div>
+            </div>
+            <div class="flex justify-between">
+              <button
+                id="prevButton"
+                class="p-3 text-Cool-gray hover:text-Marine-blue prevButton"
+              >
+                Go Back
+              </button>
+              <button
+                id="nextButton"
+                class="p-3 bg-Marine-blue text-white rounded-lg hover:opacity-90 nextButton"
+              >
+                Next Step
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

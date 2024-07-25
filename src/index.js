@@ -1,13 +1,14 @@
 // Get all the screen elements
 const leftscreens = document.querySelectorAll('[id="screen1"]');
 const rightscreens = document.querySelectorAll('[id="screen2"]');
+const planNamed = document.getElementById("plan-name");
 
 // Query all buttons by class
 const prevButtons = document.querySelectorAll(".prevButton");
 const nextButtons = document.querySelectorAll(".nextButton");
 const billingToggle = document.getElementById("billingToggle");
 const planOptions = document.querySelectorAll(".plan-option");
-
+const changeButton = document.getElementById("changeButton");
 const monthlyPrices = {
   arcade: "$9/mo",
   advanced: "$12/mo",
@@ -25,7 +26,7 @@ function updatePrices(isYearly) {
     const planName = option.querySelector("input").value;
     const priceElement = option.querySelector("p");
     const label = option.querySelector("label");
-
+    const planElement = planNamed.querySelector("p");
     if (isYearly) {
       priceElement.textContent = yearlyPrices[planName];
 
@@ -47,6 +48,27 @@ function updatePrices(isYearly) {
       }
     }
   });
+}
+
+function updatePlanName() {
+  const selectedPlan = document.querySelector(".plan-option input:checked");
+  const planNamedp = planNamed.querySelector(".planNamed");
+  const planPrice = document.getElementById("planPrice");
+  console.log(planNamedp);
+  console.log(planPrice);
+  if (selectedPlan) {
+    const planName = selectedPlan.value;
+    console.log(planName);
+    const isYearly = billingToggle.checked;
+    if (planNamedp) {
+      planNamedp.textContent = `${
+        planName.charAt(0).toUpperCase() + planName.slice(1)
+      }(${isYearly ? "Yearly" : "Monthly"})`;
+      planPrice.textContent = `${
+        isYearly ? yearlyPrices[planName] : monthlyPrices[planName]
+      }`;
+    }
+  }
 }
 
 let currentScreenIndex = 0;
@@ -72,6 +94,7 @@ function nextScreen() {
   if (currentScreenIndex < rightscreens.length - 1) {
     currentScreenIndex++;
     showScreen(currentScreenIndex);
+    updatePlanName();
   }
 }
 
@@ -79,6 +102,7 @@ function prevScreen() {
   if (currentScreenIndex > 0) {
     currentScreenIndex--;
     showScreen(currentScreenIndex);
+    updatePlanName();
   }
 }
 
@@ -93,7 +117,11 @@ prevButtons.forEach((button) => {
 billingToggle.addEventListener("change", function () {
   updatePrices(this.checked);
 });
-
+changeButton.addEventListener("click", () => {
+  currentScreenIndex = 1;
+  showScreen(currentScreenIndex);
+});
 // Initialize the first screen
 showScreen(currentScreenIndex);
 updatePrices(billingToggle.checked);
+updatePlanName();

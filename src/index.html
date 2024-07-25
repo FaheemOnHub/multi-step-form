@@ -123,7 +123,7 @@
             </button>
           </div>
         </div>
-        <div class="lg:min-h-[480px] hidden">
+        <div class="lg:min-h-[480px]">
           <div
             class="bg-hero-sidebar-mg lg:bg-hero-sidebar bg-center bg-cover justify-center flex flex-row p-8 sm:min-w-60 lg:flex-col lg:h-full lg:justify-start rounded-lg hidden"
             id="screen1"
@@ -134,7 +134,7 @@
               >
                 1
               </p>
-              <div class="flex flex-col ml-2 hidden lg:block">
+              <div class="flex flex-col ml-2 hidden sm:block">
                 <p class="text-white text-sm">STEP 1</p>
                 <h3 class="text-white font-bold">YOUR INFO</h3>
               </div>
@@ -259,6 +259,123 @@
               <span class="slider round"></span>
             </label>
             <span class="ml-2 font-medium">Yearly</span>
+          </div>
+          <div class="flex justify-between mt-8">
+            <button
+              id="prevButton"
+              class="p-3 text-Cool-gray hover:text-Marine-blue"
+            >
+              Go Back
+            </button>
+            <button
+              id="nextButton"
+              class="p-3 bg-Marine-blue text-white rounded-lg hover:opacity-90"
+            >
+              Next Step
+            </button>
+          </div>
+        </div>
+        <div
+          class="bg-hero-sidebar-mg lg:bg-hero-sidebar bg-cover bg-center flex flex-row justify-center p-8 sm:min-w-60 lg:flex-col hidden"
+          id="screen1"
+        >
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              1
+            </p>
+            <div class="flex flex-row ml-2 hidden lg:block lg:flex-col">
+              <p class="text-white text-sm">STEP 1</p>
+              <h3 class="text-white font-bold">YOUR INFO</h3>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              2
+            </p>
+            <div class="flex flex-row ml-2 hidden lg:block lg:flex-col">
+              <p class="text-white text-sm">STEP 2</p>
+              <h3 class="text-white font-bold">SELECT PLAN</h3>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              3
+            </p>
+            <div class="flex flex-row ml-2 hidden lg:block lg:flex-col">
+              <p class="text-white text-sm">STEP 3</p>
+              <h3 class="text-white font-bold">ADD-ONS</h3>
+            </div>
+          </div>
+          <div class="flex mb-4">
+            <p
+              class="text-2xl border border-white text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
+              4
+            </p>
+            <div class="flex flex-row ml-2 hidden lg:block lg:flex-col">
+              <p class="text-white text-sm">STEP 4</p>
+              <h3 class="text-white font-bold">SUMMARY</h3>
+            </div>
+          </div>
+        </div>
+        <div id="screen2" class="w-full py-4 px-10 hidden">
+          <h3 class="text-3xl font-bold mb-2">Pick add-ons</h3>
+          <p class="text-sm mb-4">
+            Add-ons help enhance your gaming experience.
+          </p>
+          <div class="flex flex-col gap-4 mb-6">
+            <div
+              class="p-4 items-center justify-between border rounded-lg cursor-pointer hover:border-Purplish-blue transition-all flex"
+            >
+              <div class="flex items-center">
+                <label class="mr-4">
+                  <input type="checkbox" id="onlineService" />
+                </label>
+                <div>
+                  <h2 class="font-bold">Online service</h2>
+                  <p class="text-sm text-Cool-gray">
+                    Access to multiplayer games
+                  </p>
+                </div>
+              </div>
+              <p class="text-Purplish-blue">+$1/mo</p>
+            </div>
+            <div
+              class="p-4 items-center justify-between border rounded-lg cursor-pointer hover:border-Purplish-blue transition-all flex"
+            >
+              <div class="flex items-center">
+                <label class="mr-4">
+                  <input type="checkbox" id="largeStorage" />
+                </label>
+                <div>
+                  <h2 class="font-bold">Large Storage</h2>
+                  <p class="text-sm text-Cool-gray">Extra 1TB of cloud save</p>
+                </div>
+              </div>
+              <p class="text-Purplish-blue">+$2/mo</p>
+            </div>
+            <div
+              class="p-4 items-center justify-between border rounded-lg cursor-pointer hover:border-Purplish-blue transition-all flex"
+            >
+              <div class="flex items-center">
+                <label class="mr-4">
+                  <input type="checkbox" id="onlineService" />
+                </label>
+                <div>
+                  <h2 class="font-bold">Customizable profile</h2>
+                  <p class="text-sm text-Cool-gray">
+                    Custom theme on your profile
+                  </p>
+                </div>
+              </div>
+              <p class="text-Purplish-blue">+$2/mo</p>
+            </div>
           </div>
           <div class="flex justify-between mt-8">
             <button

@@ -68,7 +68,7 @@
             Please provide your name,email address, and phone number.
           </p>
           <div class="flex flex-col">
-            <form>
+            <form id="personalInfoForm">
               <div class="mb-4">
                 <label
                   for="name"
@@ -83,6 +83,7 @@
                   class="block mt-1 w-full border-gray-300 rounded-md shadow-sm p-3 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   placeholder="e.g Stephen King "
                 />
+                <div class="error-message text-red-600 p-1"  id="nameError"></div>
               </div>
               <div class="mb-4">
                 <label
@@ -98,6 +99,7 @@
                   class="block mt-1 w-full border-gray-300 rounded-md shadow-sm p-3 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   placeholder="e.g stephenking@lorem.com"
                 />
+                <div class="error-message text-red-600 p-1" id="emailError"></div>
               </div>
               <div class="mb-4">
                 <label
@@ -113,6 +115,7 @@
                   class="block mt-1 w-full border-gray-300 rounded-md shadow-sm p-3 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   placeholder="e.g +91 7889123456"
                 />
+                <div class="error-message text-red-600 p-1" id="phoneError"></div>
               </div>
             </form>
             <button

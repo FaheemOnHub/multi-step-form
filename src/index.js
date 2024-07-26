@@ -172,10 +172,64 @@ function prevScreen() {
     updatePlanName();
   }
 }
+function validateForm() {
+  const form = document.getElementById("personalInfoForm");
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
 
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const phoneError = document.getElementById("phoneError");
+
+  let isValid = true;
+
+  // Reset error messages
+  name.classList.remove("error");
+  email.classList.remove("error");
+  phone.classList.remove("error");
+  nameError.textContent = "";
+  emailError.textContent = "";
+  phoneError.textContent = "";
+
+  // Validate name
+  if (!name.value) {
+    name.classList.add("error");
+    nameError.textContent = "Name is required.";
+    isValid = false;
+  }
+
+  // Validate email
+  if (!email.value) {
+    email.classList.add("error");
+    emailError.textContent = "Email is required.";
+    isValid = false;
+  } else if (!email.validity.valid) {
+    email.classList.add("error");
+    emailError.textContent = "Please enter a valid email address.";
+    isValid = false;
+  }
+
+  // Validate phone
+  if (!phone.value) {
+    phone.classList.add("error");
+    phoneError.textContent = "Phone number is required.";
+    isValid = false;
+  } else if (!phone.validity.valid) {
+    phone.classList.add("error");
+    phoneError.textContent = "Please enter a valid phone number.";
+    isValid = false;
+  }
+
+  if (isValid) {
+    nextScreen();
+  }
+}
 // Add event listeners to each button
 nextButtons.forEach((button) => {
-  button.addEventListener("click", nextScreen);
+  button.addEventListener("click", () => {
+    validateForm();
+  });
 });
 prevButtons.forEach((button) => {
   button.addEventListener("click", prevScreen);

@@ -3,7 +3,7 @@ const leftscreens = document.querySelectorAll('[id="screen1"]');
 const rightscreens = document.querySelectorAll('[id="screen2"]');
 const planNamed = document.getElementById("plan-name");
 const servicePricing = document.querySelectorAll(".servicePricing");
-
+const totalList = document.querySelectorAll(".total");
 // Query all buttons by class
 const prevButtons = document.querySelectorAll(".prevButton");
 const nextButtons = document.querySelectorAll(".nextButton");
@@ -31,6 +31,48 @@ const yearlyService = {
   largeStorage: "$20/yr",
   customService: "$20/yr",
 };
+
+let totalCost = 0;
+function calculateTotal(isYearly) {
+  totalCost = 0;
+  const selectedPlan = document.querySelector(".plan-option input:checked");
+
+  if (selectedPlan) {
+    const planName = selectedPlan.value;
+    totalCost += isYearly
+      ? parseInt(yearlyPrices[planName].slice(1))
+      : parseInt(monthlyPrices[planName].slice(1));
+  }
+
+  servicePricing.forEach((service) => {
+    const id = service.querySelector("input").id;
+    const checked = service.querySelector("input").checked;
+
+    if (checked) {
+      if (isYearly) {
+        totalCost += parseInt(yearlyService[id].slice(1));
+      } else {
+        totalCost += parseInt(monthlyService[id].slice(1));
+      }
+    }
+  });
+
+  updateTotalDisplay(isYearly);
+}
+
+function updateTotalDisplay(isYearly) {
+  const totalElement = document.querySelector(".total-value");
+  const totalNameElement = document.querySelector(".total-name");
+
+  if (totalElement && totalNameElement) {
+    totalElement.textContent = isYearly
+      ? `$${totalCost}/yr`
+      : `$${totalCost}/mo`;
+    totalNameElement.textContent = isYearly
+      ? "Total (per year)"
+      : "Total (per month)";
+  }
+}
 function servicePrice(isYearly) {
   servicePricing.forEach((service) => {
     const id = service.querySelector("input").id;
@@ -43,6 +85,7 @@ function servicePrice(isYearly) {
       planName.textContent = monthlyService[id];
     }
   });
+  calculateTotal(isYearly);
 }
 function updatePrices(isYearly) {
   planOptions.forEach((option) => {
@@ -71,6 +114,7 @@ function updatePrices(isYearly) {
       }
     }
   });
+  calculateTotal(isYearly);
 }
 
 function updatePlanName() {
@@ -91,6 +135,7 @@ function updatePlanName() {
       }`;
     }
   }
+  calculateTotal(billingToggle.checked);
 }
 
 let currentScreenIndex = 0;
@@ -136,9 +181,22 @@ prevButtons.forEach((button) => {
   button.addEventListener("click", prevScreen);
 });
 
+planOptions.forEach((option) => {
+  option.querySelector("input").addEventListener("change", () => {
+    updatePlanName();
+    calculateTotal(billingToggle.checked);
+  });
+});
+
+servicePricing.forEach((service) => {
+  service.querySelector("input").addEventListener("change", () => {
+    calculateTotal(billingToggle.checked);
+  });
+});
+
 billingToggle.addEventListener("change", function () {
   updatePrices(this.checked);
-  servicePrice(billingToggle.checked);
+  servicePrice(this.checked);
 });
 changeButton.addEventListener("click", () => {
   currentScreenIndex = 1;
@@ -148,3 +206,4 @@ changeButton.addEventListener("click", () => {
 showScreen(currentScreenIndex);
 updatePrices(billingToggle.checked);
 updatePlanName();
+calculateTotal(billingToggle.checked);

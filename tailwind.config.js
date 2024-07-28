@@ -16,8 +16,8 @@ module.exports = {
         White: "hsl(0, 0%, 100%)",
       },
       backgroundImage: {
-        "hero-sidebar": 'url("../assets/images/bg-sidebar-desktop.svg")',
-        "hero-sidebar-mg": 'url("../assets/images/bg-sidebar-mobile.svg")',
+        "hero-sidebar": 'url("./assets/images/bg-sidebar-desktop.svg")',
+        "hero-sidebar-mg": 'url("./assets/images/bg-sidebar-mobile.svg")',
       },
       font: {
         "ubuntu-bold": 'url("../a',

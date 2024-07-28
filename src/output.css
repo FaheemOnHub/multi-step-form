@@ -783,7 +783,7 @@ video {
 }
 
 .bg-hero-sidebar-mg {
-  background-image: url("../assets/images/bg-sidebar-mobile.svg");
+  background-image: url("./assets/images/bg-sidebar-mobile.svg");
 }
 
 .bg-cover {
@@ -1035,12 +1035,12 @@ input:checked + .slider:before {
     min-height: 480px;
   }
 
-  .lg\:w-full {
-    width: 100%;
-  }
-
   .lg\:w-3\/4 {
     width: 75%;
+  }
+
+  .lg\:w-full {
+    width: 100%;
   }
 
   .lg\:flex-row {
@@ -1056,7 +1056,7 @@ input:checked + .slider:before {
   }
 
   .lg\:bg-hero-sidebar {
-    background-image: url("../assets/images/bg-sidebar-desktop.svg");
+    background-image: url("./assets/images/bg-sidebar-desktop.svg");
   }
 
   .lg\:p-4 {
